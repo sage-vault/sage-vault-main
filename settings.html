@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Sage's Vault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">Sage's Vault</div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="nav-item">🏠 Home</a>
+            <a href="games.html" class="nav-item">🎮 Games</a>
+            <a href="settings.html" class="nav-item active">⚙️ Settings</a>
+            <a href="#" class="nav-item disabled">🔒 Coming Soon</a>
+            <a href="#" class="nav-item disabled">🔒 Coming Soon</a>
+        </nav>
+        <a href="https://discord.gg/NjY6EmHXUR" target="_blank" class="discord-btn">Discord</a>
+    </div>
+
+    <div class="main-content">
+        <div class="settings-container">
+            <h1 class="settings-title">Settings</h1>
+            
+            <div class="settings-section">
+                <h2>Auto About:Blank</h2>
+                <div class="toggle-setting">
+                    <label>Automatically open in about:blank</label>
+                    <div class="toggle-switch" id="autoAboutBlank" onclick="toggleAutoAboutBlank()"></div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>Tab Cloaking</h2>
+                <button class="cloak-option" onclick="cloakSite('Google Classroom', 'https://classroom.google.com', 'https://ssl.gstatic.com/classroom/ic_product_classroom_32.png')">Google Classroom</button>
+                <button class="cloak-option" onclick="cloakSite('Google', 'https://www.google.com', 'https://www.google.com/favicon.ico')">Google</button>
+                <button class="cloak-option" onclick="cloakSite('Clever', 'https://clever.com', 'https://clever.com/favicon.ico')">Clever</button>
+                <button class="cloak-option" onclick="cloakSite('Google Drive', 'https://drive.google.com', 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png')">Google Drive</button>
+                <button class="cloak-option" onclick="cloakSite('Gmail', 'https://mail.google.com', 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico')">Gmail</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>
