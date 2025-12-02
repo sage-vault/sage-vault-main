@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Sage's Vault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">Sage's Vault</div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="nav-item">🏠 Home</a>
+            <a href="games.html" class="nav-item active">🎮 Games</a>
+            <a href="settings.html" class="nav-item">⚙️ Settings</a>
+            <a href="#" class="nav-item disabled">🔒 Coming Soon</a>
+            <a href="#" class="nav-item disabled">🔒 Coming Soon</a>
+        </nav>
+        <a href="https://discord.gg/NjY6EmHXUR" target="_blank" class="discord-btn">Discord</a>
+    </div>
+
+    <div class="main-content">
+        <div class="games-grid" id="gamesGrid"></div>
+    </div>
+
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                <button class="modal-btn" onclick="closeGame()">Close</button>
+            </div>
+            <iframe class="game-frame" id="gameFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <script src="games-page.js"></script>
+</body>
+</html>
