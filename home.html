@@ -3,11 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Tab</title>
+    <title>Home - Sage's Vault</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .warning-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .warning-modal.hidden {
+            display: none;
+        }
+
+        .warning-content {
+            background: #0a0a0a;
+            border: 3px solid #fff;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+        }
+
+        .warning-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .warning-text {
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .agree-btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .agree-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
 <body>
+    <!-- Warning Modal -->
+    <div class="warning-modal" id="warningModal">
+        <div class="warning-content">
+            <h1 class="warning-title">⚠️ Warning ⚠️</h1>
+            <p class="warning-text">
+                This is a horrible thing I did that took 5 minutes, so expect not to work
+            </p>
+            <button class="agree-btn" onclick="closeWarning()">I Agree</button>
+        </div>
+    </div>
+
     <div class="sidebar">
         <div class="sidebar-title">Sage's Vault</div>
         <nav class="sidebar-nav">
@@ -29,5 +100,21 @@
     </div>
 
     <script src="home.js"></script>
+    <script>
+        function closeWarning() {
+            document.getElementById('warningModal').classList.add('hidden');
+        }
+
+        // Check if user has already agreed
+        if (localStorage.getItem('agreedToWarning') === 'true') {
+            document.getElementById('warningModal').classList.add('hidden');
+        }
+
+        // Save agreement to localStorage
+        function closeWarning() {
+            localStorage.setItem('agreedToWarning', 'true');
+            document.getElementById('warningModal').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
